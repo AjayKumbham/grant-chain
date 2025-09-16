@@ -1,9 +1,10 @@
 
+require('dotenv').config();
 const { createClient } = require('@supabase/supabase-js');
 
 // Initialize Supabase client
-const supabaseUrl = 'https://kdpfymrzterzijlbnxhd.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkcGZ5bXJ6dGVyemlqbGJueGhkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAwMTgwNTIsImV4cCI6MjA2NTU5NDA1Mn0.T-uBBBx8Xm46Ycfsy_hPYmFZHVxdZ1bT0_Uw0nK8p-Q';
+const supabaseUrl = process.env.VITE_SUPABASE_URL;
+const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY;
 const supabaseClient = createClient(supabaseUrl, supabaseKey);
 
 async function seedSampleData() {

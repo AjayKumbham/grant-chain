@@ -127,8 +127,8 @@ export const validateEnvironment = () => {
   }
   
   // Validate Supabase configuration
-  const supabaseUrl = "https://kdpfymrzterzijlbnxhd.supabase.co";
-  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkcGZ5bXJ6dGVyemlqbGJueGhkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAwMTgwNTIsImV4cCI6MjA2NTU5NDA1Mn0.T-uBBBx8Xm46Ycfsy_hPYmFZHVxdZ1bT0_Uw0nK8p-Q";
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+  const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
   
   if (!supabaseUrl || !supabaseKey) {
     warnings.push('Missing Supabase configuration');
